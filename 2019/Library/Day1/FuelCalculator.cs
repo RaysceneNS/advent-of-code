@@ -9,12 +9,12 @@ namespace Library.Day1
             return moduleMasses.Sum(CalculateFuel);
         }
 
-        public static int CalculateTotalFuelForFuel(int[] moduleMasses) 
+        public static int CalculateTotalFuelRecursive(int[] moduleMasses) 
         {
-            return moduleMasses.Sum(CalculateFuelForFuel);
+            return moduleMasses.Sum(CalculateFuelRecursive);
         }
 
-        public static int CalculateFuelForFuel(int mass) 
+        public static int CalculateFuelRecursive(int mass) 
         {
             int total = 0;
             int newFuel = mass;

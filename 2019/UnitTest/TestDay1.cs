@@ -1,12 +1,10 @@
 using Library.Day1;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Library.Tests
+[TestClass]
+public class TestDay1
 {
-    [TestClass]
-    public class TestDay1
-    {
-        readonly int[] moduleMasses = {
+    readonly int[] moduleMasses = {
                 102777,
                 107296,
                 131207,
@@ -109,34 +107,33 @@ namespace Library.Tests
                 119676
         };
 
-        [DataTestMethod]
-        [DataRow(2, 12)]
-        [DataRow(2, 14)]
-        [DataRow(654, 1969)]
-        [DataRow(33583, 100756)]
-        public void TestMethod1(int expected, int input)
-        {
-            Assert.AreEqual(expected, FuelCalculator.CalculateFuel(input));
-        }
+    [DataTestMethod]
+    [DataRow(2, 12)]
+    [DataRow(2, 14)]
+    [DataRow(654, 1969)]
+    [DataRow(33583, 100756)]
+    public void TestMethod1(int expected, int input)
+    {
+        Assert.AreEqual(expected, FuelCalculator.CalculateFuel(input));
+    }
 
-        [TestMethod]
-        public void TestPart1()
-        {
-            Assert.AreEqual(3429947, FuelCalculator.CalculateTotalFuel(moduleMasses));
-        }
+    [TestMethod]
+    public void TestPart1()
+    {
+        Assert.AreEqual(3429947, FuelCalculator.CalculateTotalFuel(moduleMasses));
+    }
 
-        [TestMethod]
-        public void TestPart2()
-        {
-            Assert.AreEqual(966, FuelCalculator.CalculateFuelForFuel(1969));
-            Assert.AreEqual(50346, FuelCalculator.CalculateFuelForFuel(100756));
-        }
+    [TestMethod]
+    public void TestPart2()
+    {
+        Assert.AreEqual(966, FuelCalculator.CalculateFuelRecursive(1969));
+        Assert.AreEqual(50346, FuelCalculator.CalculateFuelRecursive(100756));
+    }
 
-        [TestMethod]
-        public void TestPart3()
-        {
-            var moduleMass = FuelCalculator.CalculateTotalFuelForFuel(moduleMasses);
-            Assert.AreEqual(5142043, moduleMass);
-        }
+    [TestMethod]
+    public void TestPart3()
+    {
+        var moduleMass = FuelCalculator.CalculateTotalFuelRecursive(moduleMasses);
+        Assert.AreEqual(5142043, moduleMass);
     }
 }

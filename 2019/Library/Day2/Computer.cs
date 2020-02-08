@@ -64,7 +64,5 @@ namespace Library.Day2
             }
             return true;
         }
-
-
     }
 }
